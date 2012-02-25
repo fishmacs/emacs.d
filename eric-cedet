@@ -1,0 +1,21 @@
+;;; CEDET
+(load-file "~/cedet/common/cedet.el")
+;;(load-file "/tmp/cedet-1.0pre7/common/cedet.el")
+;;(load-file "~/cedet-release/cedet1.0pre7/common/cedet.el")
+(semantic-load-enable-gaudy-code-helpers)
+(setq semantic-ectag-program "/usr/bin/ctags")
+(semantic-load-enable-primary-exuberent-ctags-support)
+(setq senator-minor-mode-name "SN")
+(setq semantic-imenu-auto-rebuild-directory-indexes nil)
+(setq ede-locate-setup-options
+      '(ede-locate-global 
+	ede-locate-idutils
+	ede-locate-cscope
+	;ede-locate-locate
+	ede-locate-base))
+(global-ede-mode 1)
+(global-srecode-minor-mode 1)
+(setq srecode-insert-ask-variable-method 'field)
+(add-to-list 'load-path (expand-file-name "~/cedet/tests/"))
+
+(global-set-key "\M-:" 'data-debug-eval-expression)

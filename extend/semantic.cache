@@ -1,0 +1,14 @@
+;; Object extend/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "extend/"
+  :tables (list 
+   (semanticdb-table "igrep.el"
+    :major-mode 'emacs-lisp-mode
+    :tags 'nil
+    :file "igrep.el"
+    )
+    )
+  :file "semantic.cache"
+  :semantic-tag-version "2.0pre3"
+  :semanticdb-version "2.0pre3"
+  )

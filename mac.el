@@ -1,0 +1,1 @@
+;; platfrom-dependent config: mac
