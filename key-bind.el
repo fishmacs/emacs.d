@@ -40,3 +40,4 @@
 (global-set-key (kbd "C-<return>") 'toggle-maximize-frame)
 
 (defalias 'qrr 'query-replace-regexp)
+(defalias 'mg 'magit-status)
