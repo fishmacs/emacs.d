@@ -257,4 +257,5 @@
 
 (setq inferior-lisp-program "lein repl")
 
+(add-to-list 'load-path "~/.emacs.d/elpa/magit-1.1.1")
 (autoload 'magit-status "magit" nil t)
