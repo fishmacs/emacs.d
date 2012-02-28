@@ -1,0 +1,9 @@
+*~
+*.bak
+abbrev_defs
+auto-save-list
+semantic.cache
+session.*
+TAGS
+tramp
+url
