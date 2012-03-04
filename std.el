@@ -40,6 +40,8 @@
 (setq dired-recursive-deletes t)
 (setq dired-recursive-copies t)
 (setq dired-isearch-filenames t)
+(setq delete-by-moving-to-trash t)
+
 (require 'dired-x)
 ;(push '("java" . (gb2312 . gb2312)) process-coding-system-alist)
 
