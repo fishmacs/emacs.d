@@ -68,7 +68,7 @@
 ;;
 ;; * Download.  Fetching the package from ELPA.
 ;; * Install.  Untar the package, or write the .el file, into
-;;   ~/.emacs.d/elpa/ directory.
+;;   ~/emacs_site-lisp/elpa/ directory.
 ;; * Byte compile.  Currently this phase is done during install,
 ;;   but we may change this.
 ;; * Activate.  Evaluate the autoloads for the package to make it

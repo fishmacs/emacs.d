@@ -1,9 +1,9 @@
 ;; Simple Lisp Files
-(add-to-list 'load-path "~/.emacs.d/ide/ruby/el")
+(add-to-list 'load-path "~/emacs_site-lisp/ide/ruby/el")
 (require 'pabbrev)
 
 ;; Ruby Mode
-(add-to-list 'load-path "~/.emacs.d/ide/ruby/ruby-mode")
+(add-to-list 'load-path "~/emacs_site-lisp/ide/ruby/ruby-mode")
 
 (require 'ruby-mode)
 (require 'ruby-electric)
@@ -32,8 +32,8 @@
 	     (ruby-electric-mode))) 
 
 ;; Rinari Mode (Rails)
-(add-to-list 'load-path "~/.emacs.d/ide/ruby/rinari")
-(add-to-list 'load-path "~/.emacs.d/ide/ruby/rinari/rhtml")
+(add-to-list 'load-path "~/emacs_site-lisp/ide/ruby/rinari")
+(add-to-list 'load-path "~/emacs_site-lisp/ide/ruby/rinari/rhtml")
 (require 'rinari)
 (setq auto-mode-alist (cons '("\\.rhtml\\'" . rhtml-mode) auto-mode-alist))
 
