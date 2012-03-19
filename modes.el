@@ -9,7 +9,7 @@
   (message "set indent-tabs-mode to %s." indent-tabs-mode))
 
 ;; paredit
-(add-to-list 'load-path "~/.emacs.d/elpa/paredit-22")
+(add-to-list 'load-path "~/emacs_site-lisp/elpa/paredit-22")
 (require 'paredit)
 
 ;; c/c++
@@ -30,7 +30,7 @@
 ;;;(load "ruby")
 
 ;; python
-;(setq load-path (cons "~/.emacs.d/ide/python" load-path))
+;(setq load-path (cons "~/emacs_site-lisp/ide/python" load-path))
 ;(setq auto-mode-alist (cons '("\\.py$" . python-mode) auto-mode-alist))
 (setq ;interpreter-mode-alist
       ;(cons '("python" . python-mode) interpreter-mode-alist)
@@ -50,13 +50,13 @@
 
 ;; common lisp(slime)
 
-(setq inferior-lisp-program "sbcl")
-;(add-to-list 'load-path "~/.emacs.d/ide/slime-2.0")
+;;(setq inferior-lisp-program "sbcl")
+;(add-to-list 'load-path "~/emacs_site-lisp/ide/slime-2.0")
 ;(require 'slime)
 ;(slime-setup)
 
 ;; haskell
-;;(load "~/.emacs.d/ide/haskell-mode-2.7.0/haskell-site-file")
+;;(load "~/emacs_site-lisp/ide/haskell-mode-2.7.0/haskell-site-file")
 ;(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 ;(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
 ;;(add-hook 'haskell-mode-hook 'turn-on-haskell-simple-indent)
@@ -69,7 +69,7 @@
 ;; (setq auto-mode-alist
 ;;           (cons '("\\.ml[iylp]?$" . caml-mode) auto-mode-alist))
 
-;; (setq load-path (cons "~/.emacs.d/ide/ocaml" load-path))
+;; (setq load-path (cons "~/emacs_site-lisp/ide/ocaml" load-path))
 
 ;; (autoload 'caml-mode "ocaml" (interactive)
 ;;   "Major mode for editing Caml code." t)
@@ -77,7 +77,7 @@
 ;; (autoload 'camldebug "camldebug" (interactive) "Debug caml mode")
 
 ; --new tuareg mode
-;(add-to-list 'load-path "~/.emacs.d/ide/tuareg-mode-1.45.6")
+;(add-to-list 'load-path "~/emacs_site-lisp/ide/tuareg-mode-1.45.6")
 
 ;(autoload 'tuareg-mode "tuareg" "Major mode for editing Caml code" t)
 ;(autoload 'camldebug "camldebug" "Run the Caml debugger" t)
@@ -167,7 +167,7 @@
       (cons '("\\.asp\\'" . asp-mode) auto-mode-alist))
 
 ;; F#
-(setq load-path (cons "~/.emacs.d/ide/fsharp" load-path))
+(setq load-path (cons "~/emacs_site-lisp/ide/fsharp" load-path))
 (setq auto-mode-alist (cons '("\\.fs[iylx]?$" . fsharp-mode) auto-mode-alist))
 (autoload 'fsharp-mode "fsharp" "Major mode for editing F# code." t)
 (autoload 'run-fsharp "inf-fsharp" "Run an inferior F# process." t)
@@ -179,7 +179,7 @@
 ;;              (setq fsharp-indent-offset 2)))
 
 ;; android
-;; (add-to-list 'load-path "~/.emacs.d/ide/android")
+;; (add-to-list 'load-path "~/emacs_site-lisp/ide/android")
 ;; (require 'android-mode)
 ;; (setq android-mode-sdk-dir "~/sdk/android-sdk-linux_86")
 ;; (add-hook 'gud-mode-hook
@@ -238,7 +238,7 @@
 ;; (define-trivial-mode "evince" "\\.pdf$")
 
 ;;; evernote
-(add-to-list 'load-path "~/.emacs.d/evernote")
+(add-to-list 'load-path "~/emacs_site-lisp/evernote")
 (require 'evernote-mode)
 (setq evernote-enml-formatter-command '("w3m" "-dump" "-I" "UTF8" "-O" "UTF8"))
 (global-set-key "\C-cvc" 'evernote-create-note)
@@ -249,13 +249,20 @@
 (global-set-key "\C-cvp" 'evernote-post-region)
 (global-set-key "\C-cvb" 'evernote-browser)
 
-(add-to-list 'load-path "~/.emacs.d/elpa/clojure-mode-1.11.5")
+(add-to-list 'load-path "~/emacs_site-lisp/elpa/clojure-mode-1.11.5")
 (require 'clojure-mode)
 (add-hook 'clojure-mode-hook
           '(lambda ()
              (paredit-mode 1)))
-
 (setq inferior-lisp-program "lein repl")
 
-(add-to-list 'load-path "~/.emacs.d/elpa/magit-1.1.1")
+;; (require 'swank-clojure)
+;; ;; (add-to-list 'slime-lisp-implementations
+;; ;;              '(clojure ,(swank-clojure-cmd) :init swank-clojure-init))
+;; (setq slime-lisp-implementations
+;;       (append slime-lisp-implementations
+;;               `((clojure ,(swank-clojure-cmd) :init swank-clojure-init))))
+
+;; magit
+(add-to-list 'load-path "~/emacs_site-lisp/elpa/magit-1.1.1")
 (autoload 'magit-status "magit" nil t)

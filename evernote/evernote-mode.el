@@ -549,27 +549,31 @@ It is recommended to encrypt the file with EasyPG.")
 (defun evernote-login ()
   "Login"
   (interactive)
-  (if (called-interactively-p) (enh-clear-onmem-cache))
-  (unwind-protect
-      (let* ((cache (enh-password-cache-load))
-             (usernames (mapcar #'car cache))
-             (username (or evernote-username
-                           (read-string "Evernote user name:"
-                                        (car usernames) 'usernames)))
-             (cache-passwd (enutil-aget username cache)))
-        (unless (and cache-passwd
-                     (eq (catch 'error 
-                           (progn 
-                             (enh-command-login username cache-passwd)
-                             t))
-                         t))
-          (let* ((passwd (read-passwd "Passwd:")))
-            (enh-command-login username passwd)
-            (setq evernote-username username)
-            (enh-password-cache-save (enutil-aset username cache passwd)))))
-    (enh-password-cache-close)))
+  ;; (if (called-interactively-p) (enh-clear-onmem-cache))
+  ;; (unwind-protect
+  ;;     (let* ((cache (enh-password-cache-load))
+  ;;            (usernames (mapcar #'car cache))
+  ;;            (username (or evernote-username
+  ;;                          (read-string "Evernote user name:"
+  ;;                                       (car usernames) 'usernames)))
+  ;;            (cache-passwd (enutil-aget username cache)))
+  ;;       (unless (and cache-passwd
+  ;;                    (eq (catch 'error 
+  ;;                          (progn 
+  ;;                            (enh-command-login username cache-passwd)
+  ;;                            t))
+  ;;                        t))
+  ;;         (let* ((passwd (read-passwd "Passwd:")))
+  ;;           (enh-command-login username passwd)
+  ;;           (setq evernote-username username)
+  ;;           (enh-password-cache-save (enutil-aset username cache passwd)))))
+  ;;   (enh-password-cache-close)))
+  (let ((username "fishmacs")
+        (password "BO@smash9"))
+    (enh-command-login username password)
+    (setq evernote-username username)))
 
-
+              
 (defun evernote-open-note (&optional ask-notebook)
   "Open a note"
   (interactive)

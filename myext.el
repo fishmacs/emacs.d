@@ -1,4 +1,4 @@
-(add-to-list 'load-path "~/.emacs.d/extend")
+(add-to-list 'load-path "~/emacs_site-lisp/extend")
 
 (load-library "yic-buffer")
 

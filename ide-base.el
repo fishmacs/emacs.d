@@ -1,15 +1,15 @@
-(setq load-path (cons "~/.emacs.d/ide" load-path))
+(setq load-path (cons "~/emacs_site-lisp/ide" load-path))
 
 ;; cedet
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/elib-1.0"))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/ide/cedet-1.0/common"))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/ide/cedet-1.0/srecode"))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/ide/cedet-1.0/cogre"))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/ide/cedet-1.0/semantic"))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/ide/cedet-1.0/speedbar"))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/ide/cedet-1.0/eieio"))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/ide/cedet-1.0/ede"))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/ide/jdee-2.4.0.1/lisp"))
+(add-to-list 'load-path (expand-file-name "~/emacs_site-lisp/elib-1.0"))
+(add-to-list 'load-path (expand-file-name "~/emacs_site-lisp/ide/cedet-1.0/common"))
+(add-to-list 'load-path (expand-file-name "~/emacs_site-lisp/ide/cedet-1.0/srecode"))
+(add-to-list 'load-path (expand-file-name "~/emacs_site-lisp/ide/cedet-1.0/cogre"))
+(add-to-list 'load-path (expand-file-name "~/emacs_site-lisp/ide/cedet-1.0/semantic"))
+(add-to-list 'load-path (expand-file-name "~/emacs_site-lisp/ide/cedet-1.0/speedbar"))
+(add-to-list 'load-path (expand-file-name "~/emacs_site-lisp/ide/cedet-1.0/eieio"))
+(add-to-list 'load-path (expand-file-name "~/emacs_site-lisp/ide/cedet-1.0/ede"))
+(add-to-list 'load-path (expand-file-name "~/emacs_site-lisp/ide/jdee-2.4.0.1/lisp"))
 
 ;; ignore cedet bundled with emacs
 (setq load-path
@@ -86,7 +86,7 @@
 (require 'xcscope)
 
 ;;ecb
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/ide/ecb-2.40"))
+(add-to-list 'load-path (expand-file-name "~/emacs_site-lisp/ide/ecb-2.40"))
 (require 'ecb-autoloads)
 (setq truncate-partial-width-windows nil)
 
