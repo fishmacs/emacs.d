@@ -41,3 +41,4 @@
 
 (defalias 'qrr 'query-replace-regexp)
 (defalias 'mg 'magit-status)
+(defalias 'clj 'clojure-jack-in)
