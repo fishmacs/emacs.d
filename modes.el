@@ -266,3 +266,13 @@
 ;; magit
 (add-to-list 'load-path "~/emacs_site-lisp/elpa/magit-1.1.1")
 (autoload 'magit-status "magit" nil t)
+
+;; scala
+(add-to-list 'load-path "~/emacs_site-lisp/elpa/scala-mode-0.0.2")
+(require 'scala-mode-auto)
+;; (setq yas/scala-directory "~/emacs_site-lisp/elpa/scala-mode-0.0.2/contrib/yasnippet/snippets")
+;; (yas/load-directory yas/scala-directory)
+;; (add-hook 'scala-mode-hook
+;;           '(lambda ()
+;;              (yas/minor-mode-on)
+;;              ))

@@ -48,3 +48,8 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
+
+(load "package")
+;; change package-user-dir
+(setq package-user-dir "~/emacs_site-lisp/elpa")
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
