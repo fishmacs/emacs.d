@@ -17,7 +17,7 @@
   (interactive)
   (let ((ws (window-system)))
     (cond ((eq ws 'x) (x-toggle-maximize-frame f))
-          ((eq ws 'ns) (ns-maximize-frame))
+          ((eq ws 'ns) (ns-toggle-maximize-frame))
           ((eq ws 'w32) (w32-maximize-frame)))))
 
 ;;(if (or (eq window-system 'w32) (eq window-system 'win32))
