@@ -129,8 +129,8 @@
   (define-key c-mode-base-map [(tab)] 'my-indent-or-complete)
   (define-key c-mode-base-map [(meta ?/)] 'semantic-ia-complete-symbol-menu)
   (setq c-default-style "linux"
-        c-basic-offset 4
-        tab-width 4))
+        c-basic-offset 2
+        tab-width 2))
 
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
 
