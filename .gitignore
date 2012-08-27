@@ -7,3 +7,6 @@ session.*
 TAGS
 tramp
 url
+ensime-git/
+/elpa/archives/gnu/.#archive-contents
+/elpa/archives/marmalade/.#archive-contents

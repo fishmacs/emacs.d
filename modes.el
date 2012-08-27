@@ -19,7 +19,7 @@
 ;; ident space
 (defun my-java-mode-hook ()
   (progn
-    ;(setq c-basic-offset 2)
+    (setq c-basic-offset 2)
     (cscope:hook)))
 
 (add-hook 'java-mode-hook 'my-java-mode-hook)
@@ -267,12 +267,24 @@
 (add-to-list 'load-path "~/emacs_site-lisp/elpa/magit-1.1.1")
 (autoload 'magit-status "magit" nil t)
 
-;; scala
+;; scala/ensime
 (add-to-list 'load-path "~/emacs_site-lisp/elpa/scala-mode-0.0.2")
 (require 'scala-mode-auto)
+
+(add-to-list 'load-path "~/emacs_site-lisp/ide/ensime/elisp")
+(require 'ensime)
+(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 ;; (setq yas/scala-directory "~/emacs_site-lisp/elpa/scala-mode-0.0.2/contrib/yasnippet/snippets")
 ;; (yas/load-directory yas/scala-directory)
-;; (add-hook 'scala-mode-hook
-;;           '(lambda ()
-;;              (yas/minor-mode-on)
-;;              ))
+(add-hook 'ensime-scala-mode-hook
+          '(lambda ()
+             ;;(yas/minor-mode-on)
+             (local-set-key "\C-c \C-c" 'ensime-inf-eval-buffer)
+             (local-set-key "\C-c \C-r" 'ensime-inf-eval-region)
+             ))
+
+;; markdown
+(autoload 'markdown-mode "markdown-mode"
+  "Major mode for editing Markdown files" t)
+(setq auto-mode-alist
+      (cons '("\\.md$" . markdown-mode) auto-mode-alist))
