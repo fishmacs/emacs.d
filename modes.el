@@ -276,6 +276,10 @@
 (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 ;; (setq yas/scala-directory "~/emacs_site-lisp/elpa/scala-mode-0.0.2/contrib/yasnippet/snippets")
 ;; (yas/load-directory yas/scala-directory)
+;; (add-hook 'scala-mode-hook
+;;           '(lambda ()
+;;              (yas/minor-mode-on)
+;;              ))
 (add-hook 'ensime-scala-mode-hook
           '(lambda ()
              ;;(yas/minor-mode-on)
