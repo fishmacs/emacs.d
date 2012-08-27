@@ -30,7 +30,7 @@
 ;;;(load "ruby")
 
 ;; python
-;(setq load-path (cons "~/emacs_site-lisp/ide/python" load-path))
+(setq load-path (cons "~/emacs_site-lisp/elpa/python-mode-6.0.3" load-path))
 ;(setq auto-mode-alist (cons '("\\.py$" . python-mode) auto-mode-alist))
 (setq ;interpreter-mode-alist
       ;(cons '("python" . python-mode) interpreter-mode-alist)
@@ -39,7 +39,7 @@
            ;(set-variable 'py-indent-offset 2)
            (set-variable 'py-smart-indentation nil)
            (set-variable 'indent-tabs-mode nil))))
-;(autoload 'python-mode "python-mode" "python editing mode." t)
+(autoload 'python-mode "python-mode" "python editing mode." t)
 ;(autoload 'pdb "python-debug" "python debug." t)
 ;(define-key py-mode-map "\C-cj!"     '(py-shell "manage.py" "shell"))
 
