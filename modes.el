@@ -288,6 +288,7 @@
              ))
 
 ;; markdown
+(add-to-list 'load-path "~/emacs_site-lisp/elpa/markdown-mode-1.8.1")
 (autoload 'markdown-mode "markdown-mode"
   "Major mode for editing Markdown files" t)
 (setq auto-mode-alist
