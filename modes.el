@@ -273,18 +273,26 @@
 
 (add-to-list 'load-path "~/emacs_site-lisp/ide/ensime/elisp")
 (require 'ensime)
-(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
+;;(remove-hook 'scala-mode-hook 'ensime-scala-mode-hook)
+;;(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 ;; (setq yas/scala-directory "~/emacs_site-lisp/elpa/scala-mode-0.0.2/contrib/yasnippet/snippets")
 ;; (yas/load-directory yas/scala-directory)
 ;; (add-hook 'scala-mode-hook
 ;;           '(lambda ()
 ;;              (yas/minor-mode-on)
 ;;              ))
+(add-hook 'scala-mode-hook
+          '(lambda ()
+             ;;(yas/minor-mode-on)
+             (local-set-key "\C-c\C-c" 'scala-eval-buffer)
+             (local-set-key "\C-c\C-r" 'scala-eval-region)
+             ))
+
 (add-hook 'ensime-scala-mode-hook
           '(lambda ()
              ;;(yas/minor-mode-on)
-             (local-set-key "\C-c \C-c" 'ensime-inf-eval-buffer)
-             (local-set-key "\C-c \C-r" 'ensime-inf-eval-region)
+             (local-set-key "\C-c\C-c" 'ensime-inf-eval-buffer)
+             (local-set-key "\C-c\C-r" 'ensime-inf-eval-region)
              ))
 
 ;; markdown
