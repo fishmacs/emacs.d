@@ -247,7 +247,8 @@
 (global-set-key "\C-cvS" 'evernote-do-saved-search)
 (global-set-key "\C-cvw" 'evernote-write-note)
 (global-set-key "\C-cvp" 'evernote-post-region)
-(global-set-key "\C-cvb" 'evernote-browser)
+(global-set-key "\C-cvb" 'evernote-browsing-list-notebooks)
+(global-set-key "\C-cvm" 'evernote-change-edit-mode)
 
 (add-to-list 'load-path "~/emacs_site-lisp/elpa/clojure-mode-1.11.5")
 (require 'clojure-mode)
