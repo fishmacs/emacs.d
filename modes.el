@@ -275,7 +275,7 @@
 (add-to-list 'load-path "~/emacs_site-lisp/ide/ensime/elisp")
 (require 'ensime)
 ;;(remove-hook 'scala-mode-hook 'ensime-scala-mode-hook)
-;;(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
+(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 ;; (setq yas/scala-directory "~/emacs_site-lisp/elpa/scala-mode-0.0.2/contrib/yasnippet/snippets")
 ;; (yas/load-directory yas/scala-directory)
 ;; (add-hook 'scala-mode-hook
