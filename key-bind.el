@@ -37,7 +37,7 @@
 (global-set-key "\C-xvf" 'vc-version-diff)
 
 (global-set-key (kbd "M-RET") 'toggle-fullscreen)
-;;(global-set-key (kbd "C-<return>") 'toggle-maximize-frame)
+(global-set-key (kbd "C-<return>") 'toggle-maximize-frame)
 
 (defalias 'qrr 'query-replace-regexp)
 (defalias 'mg 'magit-status)
