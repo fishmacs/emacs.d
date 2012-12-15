@@ -3,7 +3,8 @@
 (load-library "yic-buffer")
 
 (require 'iswitchb)
-(iswitchb-default-keybindings)
+(iswitchb-mode 1)
+;; for old emacs: (iswitchb-default-keybindings)
 
 (require 'redo)
 

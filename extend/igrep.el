@@ -346,9 +346,9 @@ see `igrep-find'.")
 	     0)
       'gnu)
   "If `gnu', `\\[igrep-find]' executes
-	`find ... -print0 | xargs -0 -e grep ...`;
+	`find ... -print0 | xargs -0 grep ...`;
 if not `gnu' but non-nil, `\\[igrep-find]' executes
-	`find ... -print | xargs -e grep ...`;
+	`find ... -print | xargs grep ...`;
 if nil, `\\[igrep-find]' executes
 	`find ... -exec grep ...`.")
 
@@ -744,10 +744,10 @@ otherwise, return the current word."
       (setq files (cdr files)))
     (format (cond ((eq igrep-find-use-xargs 'gnu)
 		   ;; | \\\n
-		   "%s %s %s %s %s -print0 | xargs -0 -e %s")
+		   "%s %s %s %s %s -print0 | xargs -0 %s")
 		  (igrep-find-use-xargs
 		   ;; | \\\n
-		   "%s %s %s %s %s -print | xargs -e %s")
+		   "%s %s %s %s %s -print | xargs %s")
 		  (t
 		   "%s %s %s %s %s -exec %s %s"))
 	    igrep-find-program

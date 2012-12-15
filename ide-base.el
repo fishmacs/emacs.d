@@ -2,13 +2,13 @@
 
 ;; cedet
 (add-to-list 'load-path (expand-file-name "~/emacs_site-lisp/elib-1.0"))
-(add-to-list 'load-path (expand-file-name "~/emacs_site-lisp/ide/cedet-1.0/common"))
-(add-to-list 'load-path (expand-file-name "~/emacs_site-lisp/ide/cedet-1.0/srecode"))
-(add-to-list 'load-path (expand-file-name "~/emacs_site-lisp/ide/cedet-1.0/cogre"))
-(add-to-list 'load-path (expand-file-name "~/emacs_site-lisp/ide/cedet-1.0/semantic"))
-(add-to-list 'load-path (expand-file-name "~/emacs_site-lisp/ide/cedet-1.0/speedbar"))
-(add-to-list 'load-path (expand-file-name "~/emacs_site-lisp/ide/cedet-1.0/eieio"))
-(add-to-list 'load-path (expand-file-name "~/emacs_site-lisp/ide/cedet-1.0/ede"))
+(add-to-list 'load-path (expand-file-name "~/emacs_site-lisp/ide/cedet-1.1/common"))
+(add-to-list 'load-path (expand-file-name "~/emacs_site-lisp/ide/cedet-1.1/srecode"))
+(add-to-list 'load-path (expand-file-name "~/emacs_site-lisp/ide/cedet-1.1/cogre"))
+(add-to-list 'load-path (expand-file-name "~/emacs_site-lisp/ide/cedet-1.1/semantic"))
+(add-to-list 'load-path (expand-file-name "~/emacs_site-lisp/ide/cedet-1.1/speedbar"))
+(add-to-list 'load-path (expand-file-name "~/emacs_site-lisp/ide/cedet-1.1/eieio"))
+(add-to-list 'load-path (expand-file-name "~/emacs_site-lisp/ide/cedet-1.1/ede"))
 (add-to-list 'load-path (expand-file-name "~/emacs_site-lisp/ide/jdee-2.4.0.1/lisp"))
 
 ;; ignore cedet bundled with emacs
@@ -27,13 +27,14 @@
 	ede-locate-cscope
 	;ede-locate-locate
 	ede-locate-base))
-(global-ede-mode 1)                      ; Enable project management system
+; for prebuild cedet with emacs
+;;(global-ede-mode 1)                      ; Enable project management system
 (semantic-load-enable-code-helpers)      ; Enable prototype help and smart completion 
 
-;;to enable code folding
-;;下面两行忽然出错？2009-12-30
-;;;(global-semantic-tag-folding-mode)
-;;;(global-srecode-minor-mode 1)            ; Enable template insertion menu
+;; to enable code folding
+;; 下面两行忽然出错？2009-12-30
+;; (global-semantic-tag-folding-mode)
+;; (global-srecode-minor-mode 1)            ; Enable template insertion menu
 
 (require 'semantic-ia)
 ;;to work with my include files and cedet
@@ -136,6 +137,7 @@
 (define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
 
 ;; pymacs
+(add-to-list 'load-path (expand-file-name "~/emacs_site-lisp/elpa/pymacs-0.25"))
 (require 'pymacs)
 (pymacs-load "ropemacs" "rope-")
 (setq ropemacs-enable-shortcuts nil)

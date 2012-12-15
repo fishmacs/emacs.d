@@ -23,7 +23,7 @@
 (global-set-key (kbd "C-c d") 'sdcv-search)
 ;; ecb activate/deactivate
 (global-set-key [(meta m)] 'mew)
-(global-set-key [f12] 'ecb-minor-mode)
+;(global-set-key [f12] 'ecb-minor-mode)
 
 (global-set-key "\C-cmg" 'emms-playlist-mode-go)
 (global-set-key "\C-cms" 'emms-start)
@@ -37,8 +37,10 @@
 (global-set-key "\C-xvf" 'vc-version-diff)
 
 (global-set-key (kbd "M-RET") 'toggle-fullscreen)
-(global-set-key (kbd "C-<return>") 'toggle-maximize-frame)
+;;(global-set-key (kbd "C-<return>") 'toggle-maximize-frame)
 
 (defalias 'qrr 'query-replace-regexp)
 (defalias 'mg 'magit-status)
 (defalias 'clj 'clojure-jack-in)
+(defalias 'igf 'igrep-find)
+(defalias 'ig 'igrep)
