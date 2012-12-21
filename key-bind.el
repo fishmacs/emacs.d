@@ -44,3 +44,4 @@
 (defalias 'clj 'clojure-jack-in)
 (defalias 'igf 'igrep-find)
 (defalias 'ig 'igrep)
+(defalias 'mt 'multi-term)

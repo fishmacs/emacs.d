@@ -8,18 +8,18 @@
 
 (require 'redo)
 
-(defun toggle-fullscreen (&optional f)
-  (interactive)
-  (let ((ws (window-system)))
-    (cond ((eq ws 'x) (x-toggle-fullscreen f))
-          ((eq ws 'ns) (ns-toggle-fullscreen)))))
+;; (defun toggle-fullscreen (&optional f)
+;;   (interactive)
+;;   (let ((ws (window-system)))
+;;     (cond ((eq ws 'x) (x-toggle-fullscreen f))
+;;           ((eq ws 'ns) (ns-toggle-fullscreen)))))
 
-(defun toggle-maximize-frame (&optional f)
-  (interactive)
-  (let ((ws (window-system)))
-    (cond ((eq ws 'x) (x-toggle-maximize-frame f))
-          ((eq ws 'ns) (ns-toggle-maximize-frame))
-          ((eq ws 'w32) (w32-maximize-frame)))))
+;; (defun toggle-maximize-frame (&optional f)
+;;   (interactive)
+;;   (let ((ws (window-system)))
+;;     (cond ((eq ws 'x) (x-toggle-maximize-frame f))
+;;           ((eq ws 'ns) (ns-toggle-maximize-frame))
+;;           ((eq ws 'w32) (w32-maximize-frame)))))
 
 ;;(if (or (eq window-system 'w32) (eq window-system 'win32))
 ;;    (progn
@@ -79,3 +79,12 @@
 
 (autoload 'dired-do-igrep-find "igrep"
   "*Run `grep` via `find` on the marked (or next prefix ARG) directories." t)
+
+(require 'multi-term)
+(setq multi-term-program "/bin/sh")
+
+(add-to-list 'load-path "~/emacs_site-lisp/elpa/multi-eshell-0.0.1")
+(require 'multi-eshell)
+(defadvice ansi-term (after advise-ansi-term-coding-system)
+    (set-buffer-process-coding-system 'utf-8-unix 'utf-8-unix))
+(ad-activate 'ansi-term)
