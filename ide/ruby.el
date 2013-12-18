@@ -30,14 +30,13 @@
 ;;              'inf-ruby-minor-mode
 ;;              (ruby-electric-mode)))
 
-(add-hook 'ruby-mode-hook 'inf-ruby-minor-mode)
 (eval-after-load "ruby-mode"
   '(add-hook 'ruby-mode-hook
              '(lambda ()
                 (progn
                   (ruby-electric-mode)
-                  (inf-ruby-minor-mode)
-                  (autopair-mode 0)))))
+                  (flycheck-mode)
+                  (inf-ruby-minor-mode)))))
 
 ;; ;; Rinari Mode (Rails)
 ;; (add-to-list 'load-path "~/emacs_site-lisp/ide/ruby/rinari")

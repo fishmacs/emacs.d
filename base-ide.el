@@ -111,7 +111,7 @@
  (indent-region (point-min) (point-max) nil))
 
 ;;一列语言中的每一个创建一组mode-map(其实就是Lisp里的一个Pair类型)。如果在创建的mode-map或者global-map里找到了\C-j的定义，就把它替换成回车。这样做的好处是我们只需要替换自己关心的语言模式。其它情况下\C-j不受影响。
-(mapcar
+(dolist
  (lambda (mode)
    (let ((mode-hook (intern (concat (symbol-name mode) "-hook")))
          (mode-map (intern (concat (symbol-name mode) "-map"))))
@@ -120,7 +120,8 @@
                         (local-set-key 
                                (kbd "RET")
                                (or (lookup-key ,mode-map "\C-j")
-                                   (lookup-key global-map "\C-j"))))))) '(c-mode c++-mode cperl-mode emacs-lisp-mode java-mode html-mode lisp-mode ruby-mode sh-mode))
+                                   (lookup-key global-map "\C-j")))))))
+ '(c-mode c++-mode cperl-mode emacs-lisp-mode java-mode html-mode lisp-mode ruby-mode sh-mode))
 
 ;; (setq gdb-many-windows t)
 ;(load-library "multi-gud.el")
@@ -158,8 +159,8 @@
 ;; autopair
 (add-to-list 'load-path "~/emacs_site-lisp/elpa/autopair-0.3")
 (autoload 'autopair-global-mode "autopair" nil t)
-(autopair-global-mode)
-(add-hook 'lisp-mode-hook #'(lambda () (setq autopair-dont-activate t)))
+;(autopair-global-mode)
+;(add-hook 'lisp-mode-hook #'(lambda () (setq autopair-dont-activate t)))
 
 ;; emacs-for-python
 ;(add-to-list 'load-path (expand-file-name "~/emacs_site-lisp/ide/emacs-for-python"))
