@@ -21,3 +21,5 @@
   (call-process
    "wmctrl" nil nil nil "-i" "-R"
    (frame-parameter (or frame (selected-frame)) 'outer-window-id)))
+
+(menu-bar-mode -1)

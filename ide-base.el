@@ -90,6 +90,18 @@
 (add-to-list 'load-path (expand-file-name "~/emacs_site-lisp/ide/ecb-2.40"))
 (require 'ecb-autoloads)
 (setq truncate-partial-width-windows nil)
+(setq ecb-tip-of-the-day nil)
+(setq ecb-show-sources-in-directories-buffer 'always)
+(setq ecb-source-path '(("/Users/zw/myproj" "myproj")
+                        ("~/opensource" "opensource")
+                        ("~/work/lanzhou/web/bookbag" "bookbag")
+                        ("~/work/lanzhou/web/bookbag2" "bookbag2")
+                        ("~/work/lanzhou/apps" "lanzhou-app")
+                        ("~/work/mba/bupt" "bupt")
+                        ("~/work/zhongou" "zhongou")
+                        ("~/work" "work")
+                        ("~/emacs_site-lisp" "emacs")
+                        ("~/.virtualenvs" "pyenv")))
 
 ;;格式化整个文件。Eclipse下面CTRL+SHIFT+F就解决问题了。Vim下面gg=G也顺利搞定。Emacs下面得C-x h TAB。怎么敲速度都上不去。有了下面这段代码，事情就好办多了, M-x iwb
 (defun iwb ()
@@ -114,10 +126,10 @@
 ;(load-library "multi-gud.el")
 ;(load-library "multi-gdb-ui.el")
 
-(add-to-list 'load-path "~/emacs_site-lisp/elpa/yasnippet-0.6.1")
-(require 'yasnippet)
-(yas/initialize)
-(yas/load-directory "~/emacs_site-lisp/elpa/yasnippet-0.6.1/snippets")
+;; (add-to-list 'load-path "~/emacs_site-lisp/elpa/yasnippet-0.6.1")
+;; (require 'yasnippet)
+;; (yas/initialize)
+;; (yas/load-directory "~/emacs_site-lisp/elpa/yasnippet-0.6.1/snippets")
 
 (add-to-list 'load-path "~/emacs_site-lisp/elpa/popup-0.5")
 (add-to-list 'load-path "~/emacs_site-lisp/elpa/auto-complete-1.4")
@@ -136,9 +148,42 @@
 (setq ac-dwim t)
 (define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
 
-;; pymacs
-(add-to-list 'load-path (expand-file-name "~/emacs_site-lisp/elpa/pymacs-0.25"))
-(require 'pymacs)
-(pymacs-load "ropemacs" "rope-")
-(setq ropemacs-enable-shortcuts nil)
-(setq reopmacs-local-prefix "C-c C-p")
+(add-to-list 'load-path "~/emacs_site-lisp/elpa/anything-1.287")
+(require 'anything)
+
+;; paredit
+(add-to-list 'load-path "~/emacs_site-lisp/elpa/paredit-22")
+(require 'paredit)
+
+;; autopair
+(add-to-list 'load-path "~/emacs_site-lisp/elpa/autopair-0.3")
+(autoload 'autopair-global-mode "autopair" nil t)
+(autopair-global-mode)
+(add-hook 'lisp-mode-hook #'(lambda () (setq autopair-dont-activate t)))
+
+;; emacs-for-python
+;(add-to-list 'load-path (expand-file-name "~/emacs_site-lisp/ide/emacs-for-python"))
+(load-file (expand-file-name "~/emacs_site-lisp/ide/emacs-for-python/epy-init.el"))
+(epy-setup-ipython)
+(epy-setup-checker "pyflakes %f")
+(epy-django-snippets)
+(add-hook
+      'python-mode-hook
+      '(lambda ()
+         (progn
+           (set-variable 'py-indent-offset 4))))
+           ;; (ropemacs-mode)
+           ;; (global-set-key (kbd "RET") 'newline-and-indent)
+           ;; (set-variable 'py-smart-indentation nil)
+           ;; (set-variable 'indent-tabs-mode nil))))
+
+;; flycheck
+(add-to-list 'load-path "~/emacs_site-lisp/elpa/f-20131207.804")
+(add-to-list 'load-path "~/emacs_site-lisp/elpa/flycheck-20131213.445")
+(add-hook 'after-init-hook #'global-flycheck-mode)
+
+(speedbar-add-supported-extension ".scala")
+(speedbar-add-supported-extension ".xml")
+(speedbar-add-supported-extension ".png")
+(speedbar-add-supported-extension ".properties")
+

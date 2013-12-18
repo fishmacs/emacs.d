@@ -3,8 +3,8 @@
 ;; leave this to backward-kill-word
 ;(global-set-key [(control .)] '(lambda () (interactive) (lev/find-tag t)))
 ;(global-set-key [(control ,)] 'sucha-release-small-tag-window)
-;(global-set-key [(meta .)] 'lev/find-tag)
-;(global-set-key [(meta ,)] 'pop-tag-mark)
+(global-set-key [(meta .)] 'lev/find-tag)
+(global-set-key (kbd "M-,") 'pop-tag-mark)
 (global-set-key (kbd "C-M-,") 'find-tag)
 (define-key lisp-mode-shared-map [(shift tab)] 'complete-tag)
 

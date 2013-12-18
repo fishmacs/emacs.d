@@ -8,10 +8,6 @@
   (setq indent-tabs-mode (if indent-tabs-mode nil t))
   (message "set indent-tabs-mode to %s." indent-tabs-mode))
 
-;; paredit
-(add-to-list 'load-path "~/emacs_site-lisp/elpa/paredit-22")
-(require 'paredit)
-
 ;; c/c++
 (load "c")
 
@@ -27,21 +23,7 @@
 
 ;;; comment ruby
 ;; ruby
-;;;(load "ruby")
-
-;; python
-(setq load-path (cons "~/emacs_site-lisp/elpa/python-mode-6.0.3" load-path))
-;(setq auto-mode-alist (cons '("\\.py$" . python-mode) auto-mode-alist))
-(setq ;interpreter-mode-alist
-      ;(cons '("python" . python-mode) interpreter-mode-alist)
-      python-mode-hook
-      '(lambda () (progn
-           ;(set-variable 'py-indent-offset 2)
-           (set-variable 'py-smart-indentation nil)
-           (set-variable 'indent-tabs-mode nil))))
-(autoload 'python-mode "python-mode" "python editing mode." t)
-;(autoload 'pdb "python-debug" "python debug." t)
-;(define-key py-mode-map "\C-cj!"     '(py-shell "manage.py" "shell"))
+(load "ruby")
 
 ;; perl
 (setq perl-mode-hook
@@ -275,7 +257,11 @@
 (add-to-list 'load-path "~/emacs_site-lisp/ide/ensime/elisp")
 (require 'ensime)
 ;;(remove-hook 'scala-mode-hook 'ensime-scala-mode-hook)
-(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
+;;(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
+(add-hook 'scala-mode-hook
+          '(lambda()
+             (local-set-key (kbd "RET") 'newline-and-indent)))
+
 ;; (setq yas/scala-directory "~/emacs_site-lisp/elpa/scala-mode-0.0.2/contrib/yasnippet/snippets")
 ;; (yas/load-directory yas/scala-directory)
 ;; (add-hook 'scala-mode-hook
@@ -302,3 +288,6 @@
   "Major mode for editing Markdown files" t)
 (setq auto-mode-alist
       (cons '("\\.md$" . markdown-mode) auto-mode-alist))
+
+;(require 'undo-tree)
+;(global-undo-tree-mode 1)

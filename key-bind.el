@@ -14,7 +14,7 @@
 (global-set-key [(control c)(control v)] 'compile)
 (global-set-key [(control shift h)] 'hexl-mode)
 ;; show speedbar
-(global-set-key [(control f1)] 'speedbar)
+(global-set-key [(control escape)] 'speedbar)
 ;; haskell
 (global-set-key [(control meta down-mouse-3)] 'imenu)
 ;(global-set-key [(alt f)] 'iwb)
@@ -23,7 +23,7 @@
 (global-set-key (kbd "C-c d") 'sdcv-search)
 ;; ecb activate/deactivate
 (global-set-key [(meta m)] 'mew)
-;(global-set-key [f12] 'ecb-minor-mode)
+(global-set-key [f12] 'ecb-minor-mode)
 
 (global-set-key "\C-cmg" 'emms-playlist-mode-go)
 (global-set-key "\C-cms" 'emms-start)
@@ -36,8 +36,12 @@
 
 (global-set-key "\C-xvf" 'vc-version-diff)
 
+;(global-set-key (kbd "RET") 'newline-and-indent)
 (global-set-key (kbd "M-RET") 'toggle-fullscreen)
 (global-set-key (kbd "C-<return>") 'toggle-maximize-frame)
+
+(global-set-key [(meta kp-subtract)] 'sams-other-frame-backwards) 
+(global-set-key [(meta kp-add)] 'other-frame) 
 
 (defalias 'qrr 'query-replace-regexp)
 (defalias 'mg 'magit-status)
@@ -45,3 +49,5 @@
 (defalias 'igf 'igrep-find)
 (defalias 'ig 'igrep)
 (defalias 'mt 'multi-term)
+(defalias 'ms 'multi-eshell)
+

@@ -2,8 +2,8 @@
 
 (load-library "yic-buffer")
 
-(require 'iswitchb)
-(iswitchb-mode 1)
+;; (require 'iswitchb)
+;; (iswitchb-mode 1)
 ;; for old emacs: (iswitchb-default-keybindings)
 
 (require 'redo)
@@ -81,10 +81,31 @@
   "*Run `grep` via `find` on the marked (or next prefix ARG) directories." t)
 
 (require 'multi-term)
-(setq multi-term-program "/bin/sh")
+(setq multi-term-program "/bin/bash")
+(custom-set-variables
+     ; get 153e5f from photoshop, but seems brighter, so -5
+     '(term-default-bg-color "#10295a")        ;; background color (black)
+     '(term-default-fg-color "#dddd00"))       ;; foreground color (yellow)
+
+;; (defadvice ansi-term (after advise-ansi-term-coding-system)
+;;   (set-buffer-process-coding-system 'utf-8-unix 'utf-8-unix))
+;; (ad-activate 'ansi-term)
 
 (add-to-list 'load-path "~/emacs_site-lisp/elpa/multi-eshell-0.0.1")
 (require 'multi-eshell)
-(defadvice ansi-term (after advise-ansi-term-coding-system)
-    (set-buffer-process-coding-system 'utf-8-unix 'utf-8-unix))
-(ad-activate 'ansi-term)
+
+;; el-get
+(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+
+(unless (require 'el-get nil 'noerror)
+  (with-current-buffer
+      (url-retrieve-synchronously
+       "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
+    (let (el-get-master-branch)
+      (goto-char (point-max))
+      (eval-print-last-sexp))))
+
+(el-get 'sync)
+
+(require 'moccur-edit)
+(require 'sams-lib)

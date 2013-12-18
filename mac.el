@@ -26,10 +26,20 @@
         (t (restore-frame))))
 
 (defun toggle-fullscreen (&optional f)
+  "Toggle full screen"
   (interactive)
   (ns-toggle-fullscreen))
+
+(defun ns-toggle-fullscreen ()
+  (set-frame-parameter
+     nil 'fullscreen
+     (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
 
 ;defun(defun maximize-frame () 
 ;  (interactive)
 ;  (set-frame-position (selected-frame) 0 0)
 ;  (set-frame-size (selected-frame) 1000 1000))
+
+(setq ns-option-modifier 'super)
+
+(global-set-key "\M-`" 'other-frame) ;tmm-menubar originally
