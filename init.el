@@ -114,4 +114,4 @@
         ((eq ws 'ns) (load "mac.el"))
         ((eq ws 'w32) (load "win.el"))))
 
-
+(autopair-global-mode 0)
