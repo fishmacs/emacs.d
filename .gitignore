@@ -8,8 +8,8 @@ session.*
 TAGS
 tramp
 url
+.#archive-contents
+#archive-contents#
 ensime-git/
-/elpa/archives/gnu/.#archive-contents
-/elpa/archives/marmalade/.#archive-contents
-/elpa/archives/gnu/#archive-contents#
-/elpa/archives/marmalade/#archive-contents#
+archive-contents
+/ide/emacs-for-python/
