@@ -115,3 +115,9 @@
         ((eq ws 'w32) (load "win.el"))))
 
 (autopair-global-mode 0)
+
+(mf-set-frame-pixel-size
+ (selected-frame)
+ 660
+ (mf-max-display-pixel-height))
+

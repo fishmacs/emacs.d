@@ -172,7 +172,8 @@
       'python-mode-hook
       '(lambda ()
          (progn
-           (set-variable 'py-indent-offset 4))))
+           ;(set-variable 'py-indent-offset 4)
+           (set-variable 'python-indent-offset 4))))
            ;; (ropemacs-mode)
            ;; (global-set-key (kbd "RET") 'newline-and-indent)
            ;; (set-variable 'py-smart-indentation nil)
