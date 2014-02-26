@@ -101,6 +101,11 @@
               (add-hook 'gnus-after-exiting-gnus-hook
                         'save-buffers-kill-emacs))))
 
+(add-to-list
+ 'command-switch-alist
+ '("my" . (lambda (&rest ignore)
+            (setq zw-server-emacs nil))))
+
 (add-hook 'emacs-startup-hook
           (lambda ()
             (when zw-server-emacs
