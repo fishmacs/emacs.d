@@ -101,6 +101,7 @@
                         ("~/work/zhongou" "zhongou")
                         ("~/work" "work")
                         ("~/emacs_site-lisp" "emacs")
+                        ("~/Documents/mycode" "mycode")
                         ("~/.virtualenvs" "pyenv")))
 
 ;;格式化整个文件。Eclipse下面CTRL+SHIFT+F就解决问题了。Vim下面gg=G也顺利搞定。Emacs下面得C-x h TAB。怎么敲速度都上不去。有了下面这段代码，事情就好办多了, M-x iwb
@@ -166,7 +167,7 @@
 ;(add-to-list 'load-path (expand-file-name "~/emacs_site-lisp/ide/emacs-for-python"))
 (load-file (expand-file-name "~/emacs_site-lisp/ide/emacs-for-python/epy-init.el"))
 (epy-setup-ipython)
-(epy-setup-checker "pyflakes %f")
+;(epy-setup-checker "pyflakes %f")
 (epy-django-snippets)
 (add-hook
       'python-mode-hook

@@ -3,7 +3,7 @@
 (global-set-key [(control \')] 'redo)
 (global-set-key (kbd "C-c m c") 'comment-region)
 (global-set-key (kbd "C-c n c") 'uncomment-region)
-(global-set-key (kbd "C-c e") 'eval-region)
+(global-set-key (kbd "C-c e r") 'eval-region)
 (global-set-key [(meta left)] 'backward-sexp)
 (global-set-key [(meta right)] 'forward-sexp)
 (global-set-key [(meta g)] 'goto-line)

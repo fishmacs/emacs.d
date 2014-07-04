@@ -7,12 +7,22 @@
 (add-to-list 'load-path "~/emacs_site-lisp/elpa/ruby-electric-20131027.2245")
 (add-to-list 'load-path "~/emacs_site-lisp/elpa/inf-ruby-20131113.1130")
 (autoload 'ruby-mode "ruby-mode" "Major mode for ruby files" t)
-(add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Rakefile|\\.r[b|u]$" . ruby-mode))
 ;;如果文件后缀名不为.rb，但是脚本第一行有#!ruby之类的说明 
 ;;也相应调用此ruby模式 
 
 (add-to-list 'interpreter-mode-alist '("ruby" . ruby-mode))
 (autoload 'inf-ruby "inf-ruby" "Run an inferior Ruby process" t)
+;; deprecated
+; (autoload 'inf-ruby-setup-keybindings "inf-ruby" "" t)
+;; (eval-after-load 'ruby-mode
+;;   '(add-hook 'ruby-mode-hook 'inf-ruby-setup-keybindings))
+
+(defun ruby-insert-end ()
+  (interactive)
+  (insert "end")
+  (ruby-indent-line t)
+  (end-of-line))
 
 (defun ruby-eval-buffer () (interactive)
   "Evaluate the buffer with ruby."
@@ -36,13 +46,11 @@
                 (progn
                   (ruby-electric-mode)
                   (flycheck-mode)
-                  (inf-ruby-minor-mode)))))
+                  (inf-ruby-minor-mode)
+                  (inf-ruby-setup-keybindings)))))
 
 ;; ;; Rinari Mode (Rails)
 ;; (add-to-list 'load-path "~/emacs_site-lisp/ide/ruby/rinari")
 ;; (add-to-list 'load-path "~/emacs_site-lisp/ide/ruby/rinari/rhtml")
 ;; (require 'rinari)
 ;; (setq auto-mode-alist (cons '("\\.rhtml\\'" . rhtml-mode) auto-mode-alist))
-
-
-

@@ -1309,12 +1309,6 @@ See the definition of `ruby-font-lock-syntactic-keywords'."
                           (not (re-search-forward ruby-here-doc-beg-re eol t))))
               (string-to-syntax "|")))))))
 
-(defun ruby-insert-end ()
-  (interactive)
-  (insert "end")
-  (ruby-indent-line t)
-  (end-of-line))
-
 (if (featurep 'xemacs)
     (put 'ruby-mode 'font-lock-defaults
          '((ruby-font-lock-keywords)

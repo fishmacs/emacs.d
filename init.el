@@ -30,6 +30,7 @@
  '(standard-indent 2)
  '(term-default-bg-color "#10295a")
  '(term-default-fg-color "#dddd00")
+ '(evernote-developer-token "S=s79:U=870e2d:E=14c502db87e:C=144f87c8c82:P=1cd:A=en-devtoken:V=2:H=62ff5596b7c8b0b8c759d14ace033e13")
  '(transient-mark-mode t))
   ;; custom-set-variables was added by Custom -- don't edit or cut/paste it!
   ;; Your init file should contain only one such instance.

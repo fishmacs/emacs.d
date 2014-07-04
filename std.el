@@ -55,6 +55,7 @@
 ;; change package-user-dir
 (setq package-user-dir "~/emacs_site-lisp/elpa")
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
 
 (defun prelude-google ()
   "Googles a query or region if any."
