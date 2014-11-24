@@ -18,6 +18,7 @@
  '(canlock-password "7d08884fa2c0227b852b30402bbc6fb7d1b866d5")
  '(case-fold-search t)
  '(column-number-mode t)
+ '(custom-safe-themes (quote ("cfb2c939ab12c7267c5ac28f2c85928f2c40e3a1ae569af61614d884a047d619" "8fd393097ac6eabfcb172f656d781866beec05f27920a0691e8772aa2cdc7132" default)))
  '(delete-selection-mode t)
  '(ecb-compilation-buffer-names (quote (("*Calculator*") ("*vc*") ("*vc-diff*") ("*Apropos*") ("*Occur*") ("\\*[cC]ompilation.*\\*" . t) ("\\*i?grep.*\\*" . t) ("*JDEE Compile Server*") ("*Help*") ("*Completions*") ("*Backtrace*") ("*Compile-log*") ("*bsh*") ("*Messages*"))))
  '(ecb-layout-name "left14")
@@ -25,12 +26,12 @@
  '(ecb-options-version "2.40")
  '(ecb-primary-secondary-mouse-buttons (quote mouse-1--mouse-2))
  '(ecb-windows-width 0.21)
+ '(evernote-developer-token "S=s79:U=870e2d:E=14c502db87e:C=144f87c8c82:P=1cd:A=en-devtoken:V=2:H=62ff5596b7c8b0b8c759d14ace033e13")
  '(global-font-lock-mode t nil (font-lock))
- '(package-archives (quote (("marmalade" . "http://marmalade-repo.org/packages/") ("gnu" . "http://elpa.gnu.org/packages/") ("melpa" . "http://melpa.milkbox.net/packages/"))))
+ ;; '(package-archives (quote (("marmalade" . "http://marmalade-repo.org/packages/") ("gnu" . "http://elpa.gnu.org/packages/") ("melpa" . "http://melpa.milkbox.net/packages/"))))
  '(standard-indent 2)
  '(term-default-bg-color "#10295a")
  '(term-default-fg-color "#dddd00")
- '(evernote-developer-token "S=s79:U=870e2d:E=14c502db87e:C=144f87c8c82:P=1cd:A=en-devtoken:V=2:H=62ff5596b7c8b0b8c759d14ace033e13")
  '(transient-mark-mode t))
   ;; custom-set-variables was added by Custom -- don't edit or cut/paste it!
   ;; Your init file should contain only one such instance.
@@ -65,15 +66,19 @@
 ;;;      'mew-send-hook))
 
 ;;; color-theme
-(add-to-list 'load-path "~/emacs_site-lisp/color-theme-6.6.0")
-(require 'color-theme)
-(color-theme-initialize)
+;(add-to-list 'load-path "~/emacs_site-lisp/color-theme-6.6.0")
+;(require 'color-theme)
+;(color-theme-initialize)
 ;(color-theme-calm-forest)
 ;(color-theme-gnome2)
 ;(color-theme-deep-blue)
 ;(color-theme-jsc-dark)
-(load-file "~/emacs_site-lisp/zw-color-theme.el")
-(color-theme-zwtm)
+;; (load-file "~/emacs_site-lisp/themes/zw-color-theme.el")
+;; (color-theme-zwtm)
+(add-to-list 'load-path "~/emacs_site-lisp/elpa/hc-zenburn-theme-20140811.831")
+(require 'hc-zenburn-theme)
+;(add-to-list 'custom-theme-load-path "~/emacs_site-lisp/elpa/hc-zenburn-theme-20140811.831")
+;(load-theme 'hc-zenburn t)
 
 (load "myetag.el")
 (load "key-bind.el")
@@ -127,3 +132,4 @@
  660
  (mf-max-display-pixel-height))
 
+(setq yas-snippet-dirs '("~/emacs_site-lisp/mysnippets"))

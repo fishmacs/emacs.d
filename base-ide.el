@@ -128,10 +128,11 @@
 ;(load-library "multi-gud.el")
 ;(load-library "multi-gdb-ui.el")
 
-;; (add-to-list 'load-path "~/emacs_site-lisp/elpa/yasnippet-0.6.1")
+;; (add-to-list 'load-path "~/emacs_site-lisp/elpa/yasnippet-20140922.1402")
 ;; (require 'yasnippet)
 ;; (yas/initialize)
-;; (yas/load-directory "~/emacs_site-lisp/elpa/yasnippet-0.6.1/snippets")
+;; (yas/load-directory "~/emacs_site-lisp/elpa/yasnippet-20140922.1402/snippets")
+;; (setq yas-snippet-dirs '("~/emacs_site-lisp/mysnippets"))
 
 (add-to-list 'load-path "~/emacs_site-lisp/elpa/popup-0.5")
 (add-to-list 'load-path "~/emacs_site-lisp/elpa/auto-complete-1.4")

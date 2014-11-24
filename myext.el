@@ -80,6 +80,7 @@
 (autoload 'dired-do-igrep-find "igrep"
   "*Run `grep` via `find` on the marked (or next prefix ARG) directories." t)
 
+(add-to-list 'load-path "~/emacs_site-lisp/elpa/multi-term-20140827.704")
 (require 'multi-term)
 (setq multi-term-program "/bin/bash")
 (custom-set-variables
@@ -91,8 +92,8 @@
 ;;   (set-buffer-process-coding-system 'utf-8-unix 'utf-8-unix))
 ;; (ad-activate 'ansi-term)
 
-(add-to-list 'load-path "~/emacs_site-lisp/elpa/multi-eshell-0.0.1")
-(require 'multi-eshell)
+;; (add-to-list 'load-path "~/emacs_site-lisp/elpa/multi-eshell-0.0.1")
+;; (require 'multi-eshell)
 
 ;; el-get
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")

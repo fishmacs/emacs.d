@@ -232,23 +232,27 @@
 (global-set-key "\C-cep" 'evernote-post-region)
 (global-set-key "\C-ceb" 'evernote-browser)
 
-(add-to-list 'load-path "~/emacs_site-lisp/elpa/clojure-mode-1.11.5")
+(add-to-list 'load-path "~/emacs_site-lisp/elpa/clojure-mode-20141101.1")
 (require 'clojure-mode)
 (add-hook 'clojure-mode-hook
           '(lambda ()
              (paredit-mode 1)))
 (setq inferior-lisp-program "lein repl")
 
+;; (add-to-list 'load-path "~/emacs_site-lisp/elpa/dash-20141106.455")
+;; (add-to-list 'load-path "~/emacs_site-lisp/elpa/queue-0.1.1")
+;; (add-to-list 'load-path "~/emacs_site-lisp/ide/cider")
+;; (require 'cider)
 ;; (require 'swank-clojure)
-;; ;; (add-to-list 'slime-lisp-implementations
-;; ;;              '(clojure ,(swank-clojure-cmd) :init swank-clojure-init))
+;; (add-to-list 'slime-lisp-implementations
+;;              '(clojure ,(swank-clojure-cmd) :init swank-clojure-init))
 ;; (setq slime-lisp-implementations
 ;;       (append slime-lisp-implementations
 ;;               `((clojure ,(swank-clojure-cmd) :init swank-clojure-init))))
 
 ;; magit
-(add-to-list 'load-path "~/emacs_site-lisp/elpa/magit-1.1.1")
-(autoload 'magit-status "magit" nil t)
+;; (add-to-list 'load-path "~/emacs_site-lisp/elpa/magit-1.1.1")
+;; (autoload 'magit-status "magit" nil t)
 
 ;; scala/ensime
 (add-to-list 'load-path "~/emacs_site-lisp/elpa/scala-mode-0.0.2")
@@ -291,3 +295,9 @@
 
 ;(require 'undo-tree)
 ;(global-undo-tree-mode 1)
+
+;; go-lang
+(add-hook 'go-mode-hook
+          (lambda()
+            (local-set-key (kbd "M-.") 'godef-jump)))
+

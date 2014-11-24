@@ -53,3 +53,4 @@
 
 (set-exec-path-from-shell-PATH)
 
+(setq ns-use-srgb-colorspace t)
