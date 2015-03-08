@@ -1,23 +1,3 @@
-(setq load-path (cons "~/emacs_site-lisp/ide" load-path))
-
-;; cedet
-(add-to-list 'load-path (expand-file-name "~/emacs_site-lisp/elib-1.0"))
-(add-to-list 'load-path (expand-file-name "~/emacs_site-lisp/ide/cedet-1.1/common"))
-(add-to-list 'load-path (expand-file-name "~/emacs_site-lisp/ide/cedet-1.1/srecode"))
-(add-to-list 'load-path (expand-file-name "~/emacs_site-lisp/ide/cedet-1.1/cogre"))
-(add-to-list 'load-path (expand-file-name "~/emacs_site-lisp/ide/cedet-1.1/semantic"))
-(add-to-list 'load-path (expand-file-name "~/emacs_site-lisp/ide/cedet-1.1/speedbar"))
-(add-to-list 'load-path (expand-file-name "~/emacs_site-lisp/ide/cedet-1.1/eieio"))
-(add-to-list 'load-path (expand-file-name "~/emacs_site-lisp/ide/cedet-1.1/ede"))
-(add-to-list 'load-path (expand-file-name "~/emacs_site-lisp/ide/jdee-2.4.0.1/lisp"))
-
-;; ignore cedet bundled with emacs
-(setq load-path
-      (remove (concat "/usr/share/emacs/"
-                      (substring emacs-version 0 -2)
-                      "/lisp/cedet")
-              load-path))
-
 ;; ;; Initialize CEDET
 (load "cedet")
 (setq semantic-ectag-program "/usr/bin/etags")
@@ -87,7 +67,6 @@
 (require 'xcscope)
 
 ;;ecb
-(add-to-list 'load-path (expand-file-name "~/emacs_site-lisp/ide/ecb-2.40"))
 (require 'ecb-autoloads)
 (setq truncate-partial-width-windows nil)
 (setq ecb-tip-of-the-day nil)
@@ -100,7 +79,7 @@
                         ("~/work/mba/bupt" "bupt")
                         ("~/work/zhongou" "zhongou")
                         ("~/work" "work")
-                        ("~/emacs_site-lisp" "emacs")
+                        ;("~/emacs_site-lisp" "emacs")
                         ("~/Documents/mycode" "mycode")
                         ("~/.virtualenvs" "pyenv")))
 
@@ -134,14 +113,6 @@
 ;; (yas/load-directory "~/emacs_site-lisp/elpa/yasnippet-20140922.1402/snippets")
 ;; (setq yas-snippet-dirs '("~/emacs_site-lisp/mysnippets"))
 
-(add-to-list 'load-path "~/emacs_site-lisp/elpa/popup-0.5")
-(add-to-list 'load-path "~/emacs_site-lisp/elpa/auto-complete-1.4")
-(require 'auto-complete)
-(require 'auto-complete-config)
-(global-auto-complete-mode t)
-(setq-default ac-sources '(ac-source-words-in-same-mode-buffers))
-(add-hook 'emacs-lisp-mode-hook (lambda () (add-to-list 'ac-sources 'ac-source-symbols)))
-(add-hook 'auto-complete-mode-hook (lambda () (add-to-list 'ac-sources 'ac-source-filename)))
 (set-face-background 'ac-candidate-face "lightgray")
 (set-face-underline 'ac-candidate-face "darkgray")
 (set-face-background 'ac-selection-face "steelblue") ;;; 设置比上面截图中更好看的背景颜色
@@ -150,19 +121,6 @@
 (setq ac-auto-start 2)
 (setq ac-dwim t)
 (define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
-
-(add-to-list 'load-path "~/emacs_site-lisp/elpa/anything-1.287")
-(require 'anything)
-
-;; paredit
-(add-to-list 'load-path "~/emacs_site-lisp/elpa/paredit-22")
-(require 'paredit)
-
-;; autopair
-;; (add-to-list 'load-path "~/emacs_site-lisp/elpa/autopair-0.3")
-;; (autoload 'autopair-global-mode "autopair" nil t)
-;(autopair-global-mode)
-;(add-hook 'lisp-mode-hook #'(lambda () (setq autopair-dont-activate t)))
 
 ;; emacs-for-python
 ;(add-to-list 'load-path (expand-file-name "~/emacs_site-lisp/ide/emacs-for-python"))
@@ -175,15 +133,16 @@
       '(lambda ()
          (progn
            ;(set-variable 'py-indent-offset 4)
-           (set-variable 'python-indent-offset 4))))
+           (setq python-shell-interpreter "ipy")
+           (setq python-indent-offset 4))))
            ;; (ropemacs-mode)
            ;; (global-set-key (kbd "RET") 'newline-and-indent)
            ;; (set-variable 'py-smart-indentation nil)
            ;; (set-variable 'indent-tabs-mode nil))))
 
 ;; flycheck
-(add-to-list 'load-path "~/emacs_site-lisp/elpa/f-20131207.804")
-(add-to-list 'load-path "~/emacs_site-lisp/elpa/flycheck-20131213.445")
+(add-to-list 'load-path "~/emacs_site-lisp/elpa/f-20150211.626")
+(add-to-list 'load-path "~/emacs_site-lisp/elpa/flycheck-20150207.329")
 (add-hook 'after-init-hook
           '(lambda ()
              (progn
@@ -191,6 +150,11 @@
                (setq autopair-dont-activate t))))
 
 (speedbar-add-supported-extension ".scala")
+(speedbar-add-supported-extension ".sbt")
+(speedbar-add-supported-extension ".clj")
+(speedbar-add-supported-extension ".js")
+(speedbar-add-supported-extension ".rb")
+(speedbar-add-supported-extension ".ejs")
 (speedbar-add-supported-extension ".xml")
 (speedbar-add-supported-extension ".png")
 (speedbar-add-supported-extension ".properties")

@@ -19,7 +19,9 @@
 ;;font-encoding-alist))
 	  
 ;;(set-default-font "-outline-Courier New-normal-r-normal-normal-12-12-96-96-c-*-iso8859-1")
-(set-default-font "-apple-Menlo-medium-normal-normal-*-12-120-72-72-m-120-iso10646-1")
+;(set-default-font "-apple-Consolas-medium-normal-normal-*-13-*-*-*-m-0-iso10646-1")
+(set-default-font "Consolas-13")
+
 ;;"-apple-Menlo-medium-normal-normal-*-12-*-*-*-m-0-iso10646-1"
 
 (global-font-lock-mode t)

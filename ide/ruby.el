@@ -47,7 +47,8 @@
                   (ruby-electric-mode)
                   (flycheck-mode)
                   (inf-ruby-minor-mode)
-                  (inf-ruby-setup-keybindings)))))
+                  ;(inf-ruby-setup-keybindings)
+))))
 
 ;; ;; Rinari Mode (Rails)
 ;; (add-to-list 'load-path "~/emacs_site-lisp/ide/ruby/rinari")

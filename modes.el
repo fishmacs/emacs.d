@@ -32,7 +32,7 @@
 
 ;; common lisp(slime)
 
-;;(setq inferior-lisp-program "sbcl")
+(setq inferior-lisp-program "clisp")
 ;(add-to-list 'load-path "~/emacs_site-lisp/ide/slime-2.0")
 ;(require 'slime)
 ;(slime-setup)
@@ -137,11 +137,21 @@
    (cons '("\\.cs$" . csharp-mode) auto-mode-alist))
 
 ;; javascript
-(add-to-list 'auto-mode-alist '("\\.js\\'" . javascript-mode))
-(autoload 'javascript-mode "javascript" nil t)
-(setq javascript-mode-hook
-      '(lambda ()
-         (setq javascript-indent-level 2)))
+(add-to-list 'auto-mode-alist '("\\.js" . js2-mode))
+; node/EJS
+(add-to-list 'auto-mode-alist '("\\.ejs" . html-mode))
+;(autoload 'javascript-mode "javascript" nil t)
+(autoload 'js2-mode "js2-mode" nil t)
+(add-hook 'js2-mode-hook 'ac-js2-mode)
+;; (add-hook 'javascript-mode-hook
+;;       '(lambda ()
+;;          (setq js-indent-level 2)))
+(setq js2-basic-offset 2)
+(setq js2-highlight-level 3)
+(add-hook 'json-mode-hook
+          (lambda ()
+            (make-local-variable 'js-indent-level)
+            (setq js-indent-level 2)))
 
 ;; aspx
 (autoload 'asp-mode "asp-mode")
@@ -149,7 +159,6 @@
       (cons '("\\.asp\\'" . asp-mode) auto-mode-alist))
 
 ;; F#
-(setq load-path (cons "~/emacs_site-lisp/ide/fsharp" load-path))
 (setq auto-mode-alist (cons '("\\.fs[iylx]?$" . fsharp-mode) auto-mode-alist))
 (autoload 'fsharp-mode "fsharp" "Major mode for editing F# code." t)
 (autoload 'run-fsharp "inf-fsharp" "Run an inferior F# process." t)
@@ -220,7 +229,6 @@
 ;; (define-trivial-mode "evince" "\\.pdf$")
 
 ;;; evernote
-(add-to-list 'load-path "~/emacs_site-lisp/evernote-mode")
 (require 'org-evernote)
 (setq evernote-enml-formatter-command '("w3m" "-dump" "-I" "UTF8" "-O" "UTF8"))
 (setq enh-enclient-command "/usr/local/Cellar/ruby/1.9.3-p327/bin/enclient.rb")
@@ -232,7 +240,7 @@
 (global-set-key "\C-cep" 'evernote-post-region)
 (global-set-key "\C-ceb" 'evernote-browser)
 
-(add-to-list 'load-path "~/emacs_site-lisp/elpa/clojure-mode-20141101.1")
+;; clojure
 (require 'clojure-mode)
 (add-hook 'clojure-mode-hook
           '(lambda ()
@@ -255,13 +263,13 @@
 ;; (autoload 'magit-status "magit" nil t)
 
 ;; scala/ensime
-(add-to-list 'load-path "~/emacs_site-lisp/elpa/scala-mode-0.0.2")
-(require 'scala-mode-auto)
+;; (add-to-list 'load-path "~/emacs_site-lisp/elpa/scala-mode-0.0.2")
+;; (require 'scala-mode-auto)
 
-(add-to-list 'load-path "~/emacs_site-lisp/ide/ensime/elisp")
+;; ensime(scala IDE)
 (require 'ensime)
 ;;(remove-hook 'scala-mode-hook 'ensime-scala-mode-hook)
-;;(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
+(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 (add-hook 'scala-mode-hook
           '(lambda()
              (local-set-key (kbd "RET") 'newline-and-indent)))
@@ -287,7 +295,6 @@
              ))
 
 ;; markdown
-(add-to-list 'load-path "~/emacs_site-lisp/elpa/markdown-mode-1.8.1")
 (autoload 'markdown-mode "markdown-mode"
   "Major mode for editing Markdown files" t)
 (setq auto-mode-alist

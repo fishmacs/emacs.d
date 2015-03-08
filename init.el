@@ -18,21 +18,37 @@
  '(canlock-password "7d08884fa2c0227b852b30402bbc6fb7d1b866d5")
  '(case-fold-search t)
  '(column-number-mode t)
- '(custom-safe-themes (quote ("cfb2c939ab12c7267c5ac28f2c85928f2c40e3a1ae569af61614d884a047d619" "8fd393097ac6eabfcb172f656d781866beec05f27920a0691e8772aa2cdc7132" default)))
+ '(custom-safe-themes
+   (quote
+    ("cfb2c939ab12c7267c5ac28f2c85928f2c40e3a1ae569af61614d884a047d619" "8fd393097ac6eabfcb172f656d781866beec05f27920a0691e8772aa2cdc7132" default)))
  '(delete-selection-mode t)
- '(ecb-compilation-buffer-names (quote (("*Calculator*") ("*vc*") ("*vc-diff*") ("*Apropos*") ("*Occur*") ("\\*[cC]ompilation.*\\*" . t) ("\\*i?grep.*\\*" . t) ("*JDEE Compile Server*") ("*Help*") ("*Completions*") ("*Backtrace*") ("*Compile-log*") ("*bsh*") ("*Messages*"))))
- '(ecb-layout-name "left14")
- '(ecb-layout-window-sizes (quote (("left14" (0.185 . 0.2833333333333333) (0.185 . 0.23333333333333334) (0.185 . 0.3) (0.185 . 0.16666666666666666)))))
+ '(ecb-compilation-buffer-names
+   (quote
+    (("*Calculator*")
+     ("*vc*")
+     ("*vc-diff*")
+     ("*Apropos*")
+     ("*Occur*")
+     ("\\*[cC]ompilation.*\\*" . t)
+     ("\\*i?grep.*\\*" . t)
+     ("*JDEE Compile Server*")
+     ("*Help*")
+     ("*Completions*")
+     ("*Backtrace*")
+     ("*Compile-log*")
+     ("*bsh*")
+     ("*Messages*"))))
  '(ecb-options-version "2.40")
  '(ecb-primary-secondary-mouse-buttons (quote mouse-1--mouse-2))
  '(ecb-windows-width 0.21)
- '(evernote-developer-token "S=s79:U=870e2d:E=14c502db87e:C=144f87c8c82:P=1cd:A=en-devtoken:V=2:H=62ff5596b7c8b0b8c759d14ace033e13")
+ '(evernote-developer-token
+   "S=s79:U=870e2d:E=14c502db87e:C=144f87c8c82:P=1cd:A=en-devtoken:V=2:H=62ff5596b7c8b0b8c759d14ace033e13")
  '(global-font-lock-mode t nil (font-lock))
- ;; '(package-archives (quote (("marmalade" . "http://marmalade-repo.org/packages/") ("gnu" . "http://elpa.gnu.org/packages/") ("melpa" . "http://melpa.milkbox.net/packages/"))))
+ '(show-paren-mode t)
  '(standard-indent 2)
  '(term-default-bg-color "#10295a")
  '(term-default-fg-color "#dddd00")
- '(transient-mark-mode t))
+ '(tool-bar-mode nil))
   ;; custom-set-variables was added by Custom -- don't edit or cut/paste it!
   ;; Your init file should contain only one such instance.
  ;;'(jde-make-args "" nil nil "all"))
@@ -44,6 +60,7 @@
  )
 
 (load "myext")
+(load "prepare-ide-load")
 (load "base-ide") ;; split original modes to ide-base and modes
 (load "modes")
 
@@ -65,21 +82,6 @@
 ;;;      'mew-draft-kill
 ;;;      'mew-send-hook))
 
-;;; color-theme
-;(add-to-list 'load-path "~/emacs_site-lisp/color-theme-6.6.0")
-;(require 'color-theme)
-;(color-theme-initialize)
-;(color-theme-calm-forest)
-;(color-theme-gnome2)
-;(color-theme-deep-blue)
-;(color-theme-jsc-dark)
-;; (load-file "~/emacs_site-lisp/themes/zw-color-theme.el")
-;; (color-theme-zwtm)
-(add-to-list 'load-path "~/emacs_site-lisp/elpa/hc-zenburn-theme-20140811.831")
-(require 'hc-zenburn-theme)
-;(add-to-list 'custom-theme-load-path "~/emacs_site-lisp/elpa/hc-zenburn-theme-20140811.831")
-;(load-theme 'hc-zenburn t)
-
 (load "myetag.el")
 (load "key-bind.el")
 ;;;(load "emms-conf.el")
@@ -88,6 +90,9 @@
 (require 'tramp)
 
 (load "eclipse-goto-offset.el")
+
+
+(autopair-global-mode 0)
 
 ;; byte-compile error in linux:
 (setq warning-suppress-types nil)
@@ -125,11 +130,27 @@
         ((eq ws 'ns) (load "mac.el"))
         ((eq ws 'w32) (load "win.el"))))
 
-(autopair-global-mode 0)
-
 (mf-set-frame-pixel-size
  (selected-frame)
  660
  (mf-max-display-pixel-height))
 
 (setq yas-snippet-dirs '("~/emacs_site-lisp/mysnippets"))
+(put 'scroll-left 'disabled nil)
+(put 'scroll-right 'disabled nil)
+
+;;; color-theme
+;(color-theme-initialize)
+;(add-to-list 'load-path "~/emacs_site-lisp/color-theme-6.6.0")
+;(require 'color-theme)
+;(color-theme-initialize)
+;(color-theme-calm-forest)
+;(color-theme-gnome2)
+;(color-theme-deep-blue)
+;(color-theme-jsc-dark)
+;; (load-file "~/emacs_site-lisp/themes/zw-color-theme.el")
+;; (color-theme-zwtm)
+(add-to-list 'load-path "~/emacs_site-lisp/elpa/hc-zenburn-theme-20150119.823")
+(require 'hc-zenburn-theme)
+;(add-to-list 'custom-theme-load-path "~/emacs_site-lisp/elpa/hc-zenburn-theme-20140811.831")
+(load-theme 'hc-zenburn t)
