@@ -139,6 +139,8 @@
            ;; (global-set-key (kbd "RET") 'newline-and-indent)
            ;; (set-variable 'py-smart-indentation nil)
            ;; (set-variable 'indent-tabs-mode nil))))
+;; (add-hook 'comint-output-filter-functions
+;;           'python-comint-output-filter-function)
 
 ;; flycheck
 (add-to-list 'load-path "~/emacs_site-lisp/elpa/f-20150211.626")

@@ -43,6 +43,8 @@
 (global-set-key [(meta kp-subtract)] 'sams-other-frame-backwards) 
 (global-set-key [(meta kp-add)] 'other-frame) 
 
+(global-set-key "\M-D" 'duplicate-thing)
+
 (defalias 'qrr 'query-replace-regexp)
 (defalias 'mg 'magit-status)
 (defalias 'clj 'clojure-jack-in)
@@ -50,4 +52,5 @@
 (defalias 'ig 'igrep)
 (defalias 'mt 'multi-term)
 (defalias 'ms 'multi-eshell)
+
 

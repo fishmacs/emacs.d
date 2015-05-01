@@ -267,9 +267,9 @@
 ;; (require 'scala-mode-auto)
 
 ;; ensime(scala IDE)
-(require 'ensime)
+;(require 'ensime)
 ;;(remove-hook 'scala-mode-hook 'ensime-scala-mode-hook)
-(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
+;(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 (add-hook 'scala-mode-hook
           '(lambda()
              (local-set-key (kbd "RET") 'newline-and-indent)))
