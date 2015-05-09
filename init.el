@@ -59,8 +59,8 @@
  ;; If there is more than one, they won't work right.
  )
 
+(load "set-load-path")
 (load "myext")
-(load "prepare-ide-load")
 (load "base-ide") ;; split original modes to ide-base and modes
 (load "modes")
 
@@ -130,10 +130,10 @@
         ((eq ws 'ns) (load "mac.el"))
         ((eq ws 'w32) (load "win.el"))))
 
-(mf-set-frame-pixel-size
- (selected-frame)
- 660
- (mf-max-display-pixel-height))
+;; (mf-set-frame-pixel-size
+;;  (selected-frame)
+;;  660
+;;  (mf-max-display-pixel-height))
 
 (setq yas-snippet-dirs '("~/emacs_site-lisp/mysnippets"))
 (put 'scroll-left 'disabled nil)

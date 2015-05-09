@@ -1,3 +1,22 @@
+(require 'auto-complete)
+(require 'auto-complete-config)
+(global-auto-complete-mode t)
+(setq-default ac-sources '(ac-source-words-in-same-mode-buffers))
+(add-hook 'emacs-lisp-mode-hook (lambda () (add-to-list 'ac-sources 'ac-source-symbols)))
+(add-hook 'auto-complete-mode-hook (lambda () (add-to-list 'ac-sources 'ac-source-filename)))
+(setq-default ac-sources '(ac-source-words-in-same-mode-buffers))
+(add-hook 'emacs-lisp-mode-hook (lambda () (add-to-list 'ac-sources 'ac-source-symbols)))
+(add-hook 'auto-complete-mode-hook (lambda () (add-to-list 'ac-sources 'ac-source-filename)))
+
+
+(require 'anything)
+
+(require 'paredit)
+
+(autoload 'autopair-global-mode "autopair" nil t)
+(autopair-global-mode)
+(add-hook 'lisp-mode-hook #'(lambda () (setq autopair-dont-activate t)))
+
 ;; ;; Initialize CEDET
 (load "cedet")
 (setq semantic-ectag-program "/usr/bin/etags")
