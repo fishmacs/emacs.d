@@ -150,7 +150,6 @@
 ;(color-theme-jsc-dark)
 ;; (load-file "~/emacs_site-lisp/themes/zw-color-theme.el")
 ;; (color-theme-zwtm)
-(add-to-list 'load-path "~/emacs_site-lisp/elpa/hc-zenburn-theme-20150119.823")
 (require 'hc-zenburn-theme)
 ;(add-to-list 'custom-theme-load-path "~/emacs_site-lisp/elpa/hc-zenburn-theme-20140811.831")
 (load-theme 'hc-zenburn t)
