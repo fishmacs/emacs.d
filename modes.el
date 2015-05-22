@@ -241,7 +241,7 @@
 (global-set-key "\C-ceb" 'evernote-browser)
 
 ;; clojure
-(require 'clojure-mode)
+;(require 'clojure-mode)
 (add-hook 'clojure-mode-hook
           '(lambda ()
              (paredit-mode 1)))
@@ -267,9 +267,9 @@
 ;; (require 'scala-mode-auto)
 
 ;; ensime(scala IDE)
-;(require 'ensime)
-;;(remove-hook 'scala-mode-hook 'ensime-scala-mode-hook)
-;(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
+(require 'ensime)
+;(remove-hook 'scala-mode-hook 'ensime-scala-mode-hook)
+(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 (add-hook 'scala-mode-hook
           '(lambda()
              (local-set-key (kbd "RET") 'newline-and-indent)))

@@ -127,10 +127,13 @@
 ;(load-library "multi-gdb-ui.el")
 
 ;; (add-to-list 'load-path "~/emacs_site-lisp/elpa/yasnippet-20140922.1402")
-;; (require 'yasnippet)
-;; (yas/initialize)
-;; (yas/load-directory "~/emacs_site-lisp/elpa/yasnippet-20140922.1402/snippets")
-;; (setq yas-snippet-dirs '("~/emacs_site-lisp/mysnippets"))
+(require 'yasnippet)
+;(yas/initialize)
+;(yas-minor-mode 1)
+(yas-global-mode 1)
+;(yas/load-directory "~/emacs_site-lisp/elpa/yasnippet-20140922.1402/snippets")
+(setq yas-snippet-dirs '("~/emacs_site-lisp/mysnippets"))
+
 
 (set-face-background 'ac-candidate-face "lightgray")
 (set-face-underline 'ac-candidate-face "darkgray")

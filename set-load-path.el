@@ -33,15 +33,15 @@
 ;; F#
 (add-to-list 'load-path "~/emacs_site-lisp/ide/fsharp")
 ;; clojure
-(add-to-list 'load-path "~/emacs_site-lisp/elpa/clojure-mode-20150429.2253")
+;(add-to-list 'load-path "~/emacs_site-lisp/elpa/clojure-mode-20150517.6")
 ;; ensime(scala IDE)
-(add-to-list 'load-path "~/emacs_site-lisp/elpa/dash-20150503.1343")
+(add-to-list 'load-path "~/emacs_site-lisp/elpa/dash-20150513.1027")
 (add-to-list 'load-path "~/emacs_site-lisp/elpa/s-20140910.334")
 (add-to-list 'load-path "~/emacs_site-lisp/elpa/sbt-mode-20141110.1116")
-(add-to-list 'load-path "~/emacs_site-lisp/elpa/yasnippet-20150415.244")
-(add-to-list 'load-path "~/emacs_site-lisp/elpa/company-20150204.836")
+;(add-to-list 'load-path "~/emacs_site-lisp/elpa/yasnippet-20150415.244")
+(add-to-list 'load-path "~/emacs_site-lisp/elpa/company-20150516.1441")
 (add-to-list 'load-path "~/emacs_site-lisp/elpa/scala-mode2-20150113.2309")
-(add-to-list 'load-path "~/emacs_site-lisp/elpa/ensime-20150417.2324")
+(add-to-list 'load-path "~/emacs_site-lisp/elpa/ensime-20150515.2326")
 ;; markdown
 (add-to-list 'load-path "~/emacs_site-lisp/elpa/markdown-mode-20150121.1229")
 
