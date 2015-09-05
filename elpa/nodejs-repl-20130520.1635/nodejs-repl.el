@@ -324,7 +324,7 @@ when receive the output string"
         (format nodejs-repl-prompt-re-format nodejs-repl-prompt nodejs-repl-prompt))
   (switch-to-buffer-other-window
    (apply 'make-comint nodejs-repl-process-name nodejs-repl-command nil
-          `("-e" ,(format nodejs-repl-code (window-width) nodejs-repl-prompt))))
+          `("--use-strict" "--harmony_arrow_functions" "-e" ,(format nodejs-repl-code (window-width) nodejs-repl-prompt))))
   (nodejs-repl-mode))
 
 (provide 'nodejs-repl)

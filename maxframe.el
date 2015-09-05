@@ -65,7 +65,7 @@ determining the maximize number of columns to fit on a display"
 ;; height of 22 pixels, a titlebar of 23 pixels, and no dock.
 ;;; modified by zw, the old values are not correct under OSX 10.8+
 ;(defcustom mf-display-padding-height (+ 22 23)
-(defcustom mf-display-padding-height (+ 23 24)
+(defcustom mf-display-padding-height 53
   "*Any extra display padding that you want to account for while
 determining the maximize number of rows to fit on a display"
   :type 'integer
@@ -129,7 +129,7 @@ pixels specified by WIDTH."
 specified by HEIGHT."
   (/ (- height
         mf-display-padding-height)
-     (frame-char-height)))
+     27));(frame-char-height)))
 
 (defun mf-set-frame-pixel-size (frame width height)
   "Sets size of FRAME to WIDTH by HEIGHT, measured in pixels."

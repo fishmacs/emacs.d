@@ -54,3 +54,5 @@
 (set-exec-path-from-shell-PATH)
 
 (setq ns-use-srgb-colorspace t)
+
+(setq mf-max-width 1438)

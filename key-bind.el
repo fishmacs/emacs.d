@@ -11,7 +11,7 @@
 (global-set-key "\C-xve" 'cvs-examine)
 (global-set-key "\C-xvn" 'svn-status)
 (global-set-key [(control tab)] 'my-indent-or-complete)
-(global-set-key [(control c)(control v)] 'compile)
+;(global-set-key [(control c)(control v)] 'compile)
 (global-set-key [(control shift h)] 'hexl-mode)
 ;; show speedbar
 (global-set-key [(control escape)] 'speedbar)

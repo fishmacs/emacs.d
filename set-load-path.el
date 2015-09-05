@@ -38,7 +38,7 @@
 (add-to-list 'load-path "~/emacs_site-lisp/elpa/dash-20150513.1027")
 (add-to-list 'load-path "~/emacs_site-lisp/elpa/s-20140910.334")
 (add-to-list 'load-path "~/emacs_site-lisp/elpa/sbt-mode-20141110.1116")
-;(add-to-list 'load-path "~/emacs_site-lisp/elpa/yasnippet-20150415.244")
+(add-to-list 'load-path "~/emacs_site-lisp/elpa/yasnippet-20150415.244")
 (add-to-list 'load-path "~/emacs_site-lisp/elpa/company-20150516.1441")
 (add-to-list 'load-path "~/emacs_site-lisp/elpa/scala-mode2-20150113.2309")
 (add-to-list 'load-path "~/emacs_site-lisp/elpa/ensime-20150515.2326")
@@ -56,3 +56,6 @@
 
 ;; color-theme
 (add-to-list 'load-path "~/emacs_site-lisp/elpa/hc-zenburn-theme-20150119.823")
+
+(add-to-list 'load-path "~/emacs_site-lisp/elpa/js2-mode-20150514.550")
+(add-to-list 'load-path "~/emacs_site-lisp/elpa/ac-js2-20140906.442")

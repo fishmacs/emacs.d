@@ -137,6 +137,8 @@
    (cons '("\\.cs$" . csharp-mode) auto-mode-alist))
 
 ;; javascript
+;; (require 'js2-mode)
+;; (require 'ac-js2)
 (add-to-list 'auto-mode-alist '("\\.js" . js2-mode))
 ; node/EJS
 (add-to-list 'auto-mode-alist '("\\.ejs" . html-mode))
@@ -148,10 +150,27 @@
 ;;          (setq js-indent-level 2)))
 (setq js2-basic-offset 2)
 (setq js2-highlight-level 3)
+(setq js2-mode-show-trailing-comma-warning nil)
 (add-hook 'json-mode-hook
           (lambda ()
             (make-local-variable 'js-indent-level)
             (setq js-indent-level 2)))
+;(setq nodejs-repl-command "\"node --use-strict --harmony_arrow_functions\"")
+
+;; coffeescript
+(setq coffee-tab-width 2)
+(add-hook 'coffee-mode-hook
+          (lambda ()
+            (setq coffee--repl-multiline-initialized t)
+            (global-set-key "\C-c\C-v" 'coffee-repl-multiline)))
+
+(defun coffee-repl-multiline ()
+  (interactive)
+  (let ((proc (coffee-get-repl-proc)))
+    (comint-send-string proc "\026")))
+
+;; livescript
+(setq livescript-command "lsc")
 
 ;; aspx
 (autoload 'asp-mode "asp-mode")

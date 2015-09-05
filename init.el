@@ -41,6 +41,7 @@
  '(ecb-options-version "2.40")
  '(ecb-primary-secondary-mouse-buttons (quote mouse-1--mouse-2))
  '(ecb-windows-width 0.21)
+ '(ecb-layout-name "left14")
  '(evernote-developer-token
    "S=s79:U=870e2d:E=14c502db87e:C=144f87c8c82:P=1cd:A=en-devtoken:V=2:H=62ff5596b7c8b0b8c759d14ace033e13")
  '(global-font-lock-mode t nil (font-lock))
@@ -59,7 +60,19 @@
  ;; If there is more than one, they won't work right.
  )
 
+(let ((ws (window-system)))
+  (cond ((eq ws 'x) (load "linux.el"))
+        ((eq ws 'ns) (load "mac.el"))
+        ((eq ws 'w32) (load "win.el"))))
+
 (load "set-load-path")
+
+(load "el-get")
+
+(require 'yasnippet)
+(yas-global-mode 1)
+(setq yas-snippet-dirs '("~/emacs_site-lisp/mysnippets"))
+
 (load "myext")
 (load "base-ide") ;; split original modes to ide-base and modes
 (load "modes")
@@ -90,7 +103,6 @@
 (require 'tramp)
 
 (load "eclipse-goto-offset.el")
-
 
 (autopair-global-mode 0)
 
@@ -125,17 +137,11 @@
 ;; (ignore-errors
 ;;   (server-start))
 
-(let ((ws (window-system)))
-  (cond ((eq ws 'x) (load "linux.el"))
-        ((eq ws 'ns) (load "mac.el"))
-        ((eq ws 'w32) (load "win.el"))))
-
 ;; (mf-set-frame-pixel-size
 ;;  (selected-frame)
 ;;  660
 ;;  (mf-max-display-pixel-height))
 
-(setq yas-snippet-dirs '("~/emacs_site-lisp/mysnippets"))
 (put 'scroll-left 'disabled nil)
 (put 'scroll-right 'disabled nil)
 
