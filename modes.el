@@ -44,6 +44,12 @@
 ;;(add-hook 'haskell-mode-hook 'turn-on-haskell-simple-indent)
 ;(add-hook 'haskell-mode-hook 'font-lock-mode)
 ;; no effect?!
+(add-hook 'haskell-mode-hook 'haskell-indentation-mode)
+(add-hook 'haskell-mode-hook 'interactive-haskell-mode)
+(add-hook 'haskell-mode-hook 
+ '(lambda ()
+   (local-set-key (kbd "C-c C-d") 'inferior-haskell-send-decl)))
+          
 (setq haskell-ghci-program-args '("-fbang-patterns" "-XMultiParamTypeClasses"))
 
 ;; ocaml
@@ -171,6 +177,15 @@
 
 ;; livescript
 (setq livescript-command "lsc")
+(setq livescript-args-repl '("-w"))
+
+;; julia
+(add-hook 'julia-mode-hook
+          (lambda ()
+            (require 'julia-shell)
+            (setq julia-indent-offset 2)
+            (local-set-key "\C-c\C-c" 'julia-shell-save-and-go)
+            (local-set-key "\C-c\C-r" 'julia-shell-run-region-or-line)))
 
 ;; aspx
 (autoload 'asp-mode "asp-mode")

@@ -59,3 +59,5 @@
 
 (add-to-list 'load-path "~/emacs_site-lisp/elpa/js2-mode-20150514.550")
 (add-to-list 'load-path "~/emacs_site-lisp/elpa/ac-js2-20140906.442")
+
+(add-to-list 'load-path "~/emacs_site-lisp/elpa/julia-shell-20151104.1052")

@@ -68,6 +68,7 @@
 (load "set-load-path")
 
 (load "el-get")
+(el-get)
 
 (require 'yasnippet)
 (yas-global-mode 1)
@@ -159,3 +160,4 @@
 (require 'hc-zenburn-theme)
 ;(add-to-list 'custom-theme-load-path "~/emacs_site-lisp/elpa/hc-zenburn-theme-20140811.831")
 (load-theme 'hc-zenburn t)
+
